@@ -17,37 +17,37 @@ class CategorySeeder extends Seeder
                 'parent_id' => null,
                 'gender' => 'men',
                 'name' => 'Pria',
-                'description' => 'Sepatu dan pakaian pria yang nyaman untuk aktivitas harian dari bahan alami ramah lingkungan.',
+                'description' => 'Koleksi jam tangan pria fifa dengan presisi tinggi, material kaca safir, dan ketahanan air superior.',
                 'order' => 1,
                 'is_active' => true,
             ]
         );
 
-        $menShoes = Category::updateOrCreate(
-            ['slug' => 'men-shoes'],
+        $menWatches = Category::updateOrCreate(
+            ['slug' => 'men-watches'],
             [
                 'parent_id' => $men->id,
                 'gender' => 'men',
-                'name' => 'Sepatu',
-                'description' => 'Koleksi sepatu pria berbahan material alami',
+                'name' => 'Jam Tangan',
+                'description' => 'Koleksi jam tangan pria mewah dan kasual',
                 'order' => 1,
                 'is_active' => true,
             ]
         );
 
-        $menShoeTypes = [
-            'Sneaker Sehari-hari' => 'men-everyday-sneakers',
-            'Sepatu Lari' => 'men-running-shoes',
-            'Slip-On & Santai' => 'men-slip-ons-loungers',
-            'Sepatu Tahan Air' => 'men-water-repellent-shoes',
-            'Sepatu Hiking & Trail' => 'men-hiking-trail-shoes',
+        $menWatchTypes = [
+            'Automatic & Mekanikal' => 'men-automatic-watches',
+            'Chronograph & Sport' => 'men-chronograph-watches',
+            'Classic Dress Watch' => 'men-dress-watches',
+            'Diver & Tahan Air' => 'men-diver-watches',
+            'Smart & Hybrid Watch' => 'men-smart-watches',
         ];
 
-        foreach ($menShoeTypes as $name => $slug) {
+        foreach ($menWatchTypes as $name => $slug) {
             Category::updateOrCreate(
                 ['slug' => $slug],
                 [
-                    'parent_id' => $menShoes->id,
+                    'parent_id' => $menWatches->id,
                     'gender' => 'men',
                     'name' => $name,
                     'order' => 0,
@@ -56,23 +56,23 @@ class CategorySeeder extends Seeder
             );
         }
 
-        $menApparel = Category::updateOrCreate(
-            ['slug' => 'men-apparel'],
+        $menAccessories = Category::updateOrCreate(
+            ['slug' => 'men-accessories'],
             [
                 'parent_id' => $men->id,
                 'gender' => 'men',
-                'name' => 'Pakaian',
-                'description' => 'Pakaian ramah lingkungan dan kaos pria',
+                'name' => 'Tali & Aksesori',
+                'description' => 'Tali jam kulit asli, stainless steel mesh, dan kotak winder jam tangan',
                 'order' => 2,
                 'is_active' => true,
             ]
         );
 
-        foreach (['Kaos & Atasan' => 'men-tees-tops', 'Kaos Kaki' => 'men-socks', 'Jaket & Hoodie' => 'men-sweats-hoodies'] as $name => $slug) {
+        foreach (['Tali Kulit Italia' => 'men-leather-straps', 'Tali Steel & Mesh' => 'men-steel-straps', 'Kotak Winder & Travel Case' => 'men-watch-cases'] as $name => $slug) {
             Category::updateOrCreate(
                 ['slug' => $slug],
                 [
-                    'parent_id' => $menApparel->id,
+                    'parent_id' => $menAccessories->id,
                     'gender' => 'men',
                     'name' => $name,
                     'order' => 0,
@@ -88,37 +88,37 @@ class CategorySeeder extends Seeder
                 'parent_id' => null,
                 'gender' => 'women',
                 'name' => 'Wanita',
-                'description' => 'Sepatu dan pakaian wanita yang nyaman untuk aktivitas harian dari bahan alami ramah lingkungan.',
+                'description' => 'Koleksi jam tangan wanita fifa bernuansa elegan, rose gold, dan detail mother-of-pearl memukau.',
                 'order' => 2,
                 'is_active' => true,
             ]
         );
 
-        $womenShoes = Category::updateOrCreate(
-            ['slug' => 'women-shoes'],
+        $womenWatches = Category::updateOrCreate(
+            ['slug' => 'women-watches'],
             [
                 'parent_id' => $women->id,
                 'gender' => 'women',
-                'name' => 'Sepatu',
-                'description' => 'Koleksi sepatu wanita berbahan material alami',
+                'name' => 'Jam Tangan',
+                'description' => 'Koleksi jam tangan wanita elegan',
                 'order' => 1,
                 'is_active' => true,
             ]
         );
 
-        $womenShoeTypes = [
-            'Sneaker Sehari-hari' => 'women-everyday-sneakers',
-            'Sepatu Lari' => 'women-running-shoes',
-            'Flat & Santai' => 'women-flats-loungers',
-            'Sepatu Tahan Air' => 'women-water-repellent-shoes',
-            'Slip-On' => 'women-slip-ons',
+        $womenWatchTypes = [
+            'Classic & Petite' => 'women-classic-petite',
+            'Luxury & Rose Gold' => 'women-luxury-rosegold',
+            'Minimalist & Mesh' => 'women-minimalist-mesh',
+            'Leather Band Elegance' => 'women-leather-elegance',
+            'Diamond Accent Series' => 'women-diamond-accent',
         ];
 
-        foreach ($womenShoeTypes as $name => $slug) {
+        foreach ($womenWatchTypes as $name => $slug) {
             Category::updateOrCreate(
                 ['slug' => $slug],
                 [
-                    'parent_id' => $womenShoes->id,
+                    'parent_id' => $womenWatches->id,
                     'gender' => 'women',
                     'name' => $name,
                     'order' => 0,
@@ -127,23 +127,23 @@ class CategorySeeder extends Seeder
             );
         }
 
-        $womenApparel = Category::updateOrCreate(
-            ['slug' => 'women-apparel'],
+        $womenAccessories = Category::updateOrCreate(
+            ['slug' => 'women-accessories'],
             [
                 'parent_id' => $women->id,
                 'gender' => 'women',
-                'name' => 'Pakaian',
-                'description' => 'Pakaian wanita ramah lingkungan',
+                'name' => 'Tali & Aksesori',
+                'description' => 'Tali jam kulit wanita dan kotak perhiasan jam tangan',
                 'order' => 2,
                 'is_active' => true,
             ]
         );
 
-        foreach (['Kaos & Atasan' => 'women-tees-tops', 'Kaos Kaki' => 'women-socks', 'Tas & Aksesori' => 'women-bags-accessories'] as $name => $slug) {
+        foreach (['Tali Kulit Pastel' => 'women-leather-straps', 'Gelang Mesh Rose Gold' => 'women-mesh-straps', 'Travel Pouch' => 'women-watch-pouches'] as $name => $slug) {
             Category::updateOrCreate(
                 ['slug' => $slug],
                 [
-                    'parent_id' => $womenApparel->id,
+                    'parent_id' => $womenAccessories->id,
                     'gender' => 'women',
                     'name' => $name,
                     'order' => 0,
@@ -157,31 +157,31 @@ class CategorySeeder extends Seeder
             [
                 'title' => 'Produk Terbaru',
                 'slug' => 'new-arrivals',
-                'description' => 'Pilihan gaya terbaru dan warna musiman berbahan wol merino premium dan serat pohon eukaliptus.',
+                'description' => 'Koleksi jam tangan terbaru dengan inovasi movement presisi tinggi dan desain kontemporer.',
                 'order' => 1,
             ],
             [
                 'title' => 'Produk Terlaris',
                 'slug' => 'best-sellers',
-                'description' => 'Koleksi sepatu paling favorit yang dirancang untuk kenyamanan tak tertandingi sepanjang hari.',
+                'description' => 'Koleksi jam tangan paling dicari dan menjadi favorit pelanggan di seluruh Indonesia.',
                 'order' => 2,
             ],
             [
                 'title' => 'Diskon Spesial',
                 'slug' => 'sale',
-                'description' => 'Penawaran harga spesial terbatas untuk koleksi produk berkelanjutan pilihan.',
+                'description' => 'Penawaran istimewa berbatas waktu untuk seri jam tangan pilihan.',
                 'order' => 3,
             ],
             [
-                'title' => 'Koleksi Tree Runners',
-                'slug' => 'tree-runners',
-                'description' => 'Sepatu ringan dan sejuk dari serat pohon eukaliptus alami terbarukan.',
+                'title' => 'Seri Chrono Master',
+                'slug' => 'chrono-master',
+                'description' => 'Ketepatan pengukuran waktu tingkat tinggi dalam balutan casing 316L surgical steel.',
                 'order' => 4,
             ],
             [
-                'title' => 'Koleksi Wool Runners',
-                'slug' => 'wool-runners',
-                'description' => 'Sneaker empuk, hangat, dan bernapas dari wol merino bersertifikat ZQ.',
+                'title' => 'Seri Heritage Automatic',
+                'slug' => 'heritage-automatic',
+                'description' => 'Kemewahan mesin mekanikal otomatis tanpa baterai dengan kaca safir anti-gores.',
                 'order' => 5,
             ],
         ];

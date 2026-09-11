@@ -20,7 +20,7 @@ class SearchController extends Controller
         $pageTitle = $q !== '' ? "Hasil Pencarian: \"{$q}\"" : 'Pencarian Produk';
         $pageDescription = $q !== '' 
             ? "Menampilkan produk yang cocok dengan kata kunci \"{$q}\"."
-            : 'Jelajahi berbagai pilihan sepatu dan pakaian ramah lingkungan fifa.';
+            : 'Jelajahi berbagai pilihan jam tangan mewah dan presisi tinggi fifa.';
 
         $query = Product::where('is_active', true)
             ->with(['category', 'images', 'variants' => fn ($varQuery) => $varQuery->where('is_active', true)]);

@@ -111,7 +111,7 @@
                 <!-- Size Filter -->
                 @if ($availableSizes->isNotEmpty())
                     <div class="py-4 border-b border-sand space-y-2">
-                        <span class="text-caption font-bold uppercase tracking-wide10 text-charcoal block mb-2">Ukuran Sepatu</span>
+                        <span class="text-caption font-bold uppercase tracking-wide10 text-charcoal block mb-2">Ukuran / Diameter Dial</span>
                         <div class="grid grid-cols-4 gap-1.5">
                             @foreach ($availableSizes as $sz)
                                 <label class="cursor-pointer">
@@ -253,7 +253,7 @@
             <!-- Size Filter -->
             @if ($availableSizes->isNotEmpty())
                 <div class="border-t border-sand pt-4 space-y-2">
-                    <span class="text-caption font-bold uppercase tracking-wide10 text-charcoal block">Ukuran Sepatu</span>
+                    <span class="text-caption font-bold uppercase tracking-wide10 text-charcoal block">Ukuran / Diameter Dial</span>
                     <div class="grid grid-cols-4 gap-2">
                         @foreach ($availableSizes as $sz)
                             <label class="cursor-pointer min-h-[44px]">

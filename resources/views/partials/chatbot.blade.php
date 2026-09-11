@@ -181,13 +181,13 @@ function fifaChatbot() {
         isTyping: false,
         messages: [],
         quickPrompts: [
-            { label: 'Rekomendasi Terlaris', text: 'Rekomendasi sepatu paling laris dan favorit' },
-            { label: 'Panduan Ukuran', text: 'Bagaimana cara memilih ukuran sepatu yang tepat?' },
-            { label: 'Material Alami', text: 'Apa saja material alami yang digunakan fifa?' },
-            { label: 'Status Pengiriman', text: 'Berapa lama estimasi pengiriman dan biaya ongkir?' },
-            { label: 'Garansi 30 Hari', text: 'Bagaimana ketentuan garansi uji coba 30 hari?' },
-            { label: 'Koleksi Pria', text: 'Lihat koleksi sepatu untuk pria' },
-            { label: 'Koleksi Wanita', text: 'Lihat koleksi sepatu untuk wanita' }
+            { label: 'Rekomendasi Terlaris', text: 'Rekomendasi jam tangan paling laris dan favorit' },
+            { label: 'Panduan Ukuran Dial', text: 'Bagaimana cara memilih ukuran diameter jam tangan yang tepat?' },
+            { label: 'Material & Safir', text: 'Apa keunggulan kaca safir dan material jam tangan fifa?' },
+            { label: 'Mesin Automatic', text: 'Bagaimana cara kerja dan perawatan jam automatic tanpa baterai?' },
+            { label: 'Garansi Resmi 2 Tahun', text: 'Bagaimana ketentuan garansi resmi internasional 2 tahun?' },
+            { label: 'Koleksi Pria', text: 'Lihat koleksi jam tangan untuk pria' },
+            { label: 'Koleksi Wanita', text: 'Lihat koleksi jam tangan untuk wanita' }
         ],
 
         init() {
@@ -201,10 +201,10 @@ function fifaChatbot() {
             this.messages = [
                 {
                     sender: 'bot',
-                    text: 'Halo, selamat datang di <strong>fifa</strong>.<br><br>Saya asisten fifa, siap membantu Anda menemukan model sepatu yang sesuai, panduan ukuran, informasi bahan alami, atau status pesanan. Ada yang bisa dibantu?',
+                    text: 'Halo, selamat datang di <strong>fifa</strong>.<br><br>Saya asisten ahli horologi fifa, siap membantu Anda menemukan model jam tangan mewah, panduan ukuran diameter dial, info mesin otomatis, atau status pesanan. Ada yang bisa dibantu?',
                     links: [
-                        { label: 'Sepatu Pria', url: '{{ route('categories.men') }}' },
-                        { label: 'Sepatu Wanita', url: '{{ route('categories.women') }}' },
+                        { label: 'Jam Tangan Pria', url: '{{ route('categories.men') }}' },
+                        { label: 'Jam Tangan Wanita', url: '{{ route('categories.women') }}' },
                         { label: 'Produk Terlaris', url: '{{ route('collections.show', 'best-sellers') }}' }
                     ]
                 }
@@ -242,10 +242,11 @@ function fifaChatbot() {
             if (q.includes('terlaris') || q.includes('rekomendasi') || q.includes('favorit') || q.includes('populer') || q.includes('best seller')) {
                 return {
                     sender: 'bot',
-                    text: 'Berikut adalah model sepatu favorit pilihan pelanggan fifa:<br><br>' +
-                          '&bull; <strong>Tree Dasher 2</strong>: Sepatu lari responsif dan sejuk dari serat pohon eukaliptus.<br>' +
-                          '&bull; <strong>Wool Runner 2</strong>: Sneakers kasual harian dari wol ZQ Merino alami.<br>' +
-                          '&bull; <strong>Tree Lounger</strong>: Model slip-on santai yang sangat ringan dan praktis.',
+                    text: 'Berikut adalah seri jam tangan favorit pilihan pelanggan fifa:<br><br>' +
+                          '&bull; <strong>FIFA Chrono Master</strong>: Kronograf presisi dial biru sunray mewah dengan casing 316L stainless steel.<br>' +
+                          '&bull; <strong>FIFA Heritage Automatic</strong>: Jam mekanikal otomatis 24 jewels tanpa baterai dengan kaca safir anti-gores.<br>' +
+                          '&bull; <strong>FIFA Petite Rose Gold</strong>: Jam tangan wanita anggun berlapis rose gold 18K dan dial mother-of-pearl.<br>' +
+                          '&bull; <strong>FIFA Pro Diver 300M</strong>: Jam selam tangguh dengan ketahanan air 30 ATM dan bezel keramik hijau.',
                     links: [
                         { label: 'Lihat Semua Terlaris', url: '{{ route('collections.show', 'best-sellers') }}' },
                         { label: 'Koleksi Terbaru', url: '{{ route('collections.show', 'new-arrivals') }}' }
@@ -254,42 +255,55 @@ function fifaChatbot() {
             }
 
             // 2. Ukuran / Sizing / Size Guide
-            if (q.includes('ukuran') || q.includes('size') || q.includes('sempit') || q.includes('kebesaran') || q.includes('pas')) {
+            if (q.includes('ukuran') || q.includes('size') || q.includes('diameter') || q.includes('dial') || q.includes('pergelangan') || q.includes('pas')) {
                 return {
                     sender: 'bot',
-                    text: '<strong>Panduan Memilih Ukuran fifa:</strong><br><br>' +
-                          '&bull; Sebagian besar sepatu fifa berukuran standar (<em>True to Size</em>).<br>' +
-                          '&bull; Untuk kaki yang lebih lebar atau berada di antara dua ukuran, disarankan untuk <strong>naik 1 ukuran</strong> (misalnya dari 41.5 ke 42).<br>' +
-                          '&bull; Material wol Merino kami akan sedikit menyesuaikan dengan bentuk kaki Anda seiring pemakaian.',
+                    text: '<strong>Panduan Memilih Diameter Jam Tangan fifa:</strong><br><br>' +
+                          '&bull; <strong>30mm - 34mm</strong>: Sangat proporsional untuk wanita atau lingkar pergelangan ramping (&lt; 15 cm).<br>' +
+                          '&bull; <strong>38mm - 40mm</strong>: Ukuran klasik universal yang pas untuk mayoritas pergelangan pria dan wanita (15 - 17.5 cm).<br>' +
+                          '&bull; <strong>42mm - 44mm</strong>: Ukuran gagah untuk tipe Chronograph dan Diver pada pergelangan pria (&gt; 17.5 cm).',
                     links: [
                         { label: 'Panduan Ukuran Lengkap', url: '{{ route('pages.show', 'size-guide') }}' }
                     ]
                 };
             }
 
-            // 3. Material / Bahan Alami / Keberlanjutan
-            if (q.includes('material') || q.includes('bahan') || q.includes('alami') || q.includes('wol') || q.includes('pohon') || q.includes('eukaliptus') || q.includes('tebu') || q.includes('ramah lingkungan')) {
+            // 3. Material / Kaca Safir / Bahan
+            if (q.includes('material') || q.includes('bahan') || q.includes('safir') || q.includes('sapphire') || q.includes('steel') || q.includes('kaca') || q.includes('anti gores')) {
                 return {
                     sender: 'bot',
-                    text: 'fifa menggunakan material alami terbarukan untuk menggantikan bahan sintetis berbasis plastik:<br><br>' +
-                          '&bull; <strong>ZQ Merino Wool</strong>: Wol alami lembut, nyaman, dan tidak menimbulkan gatal.<br>' +
-                          '&bull; <strong>Tree Fiber (Eukaliptus)</strong>: Serat pohon sejuk bernapas dan halus.<br>' +
-                          '&bull; <strong>SweetFoam™</strong>: Sol empuk berbahan dasar tebu manis ramah lingkungan.',
+                    text: 'Setiap jam tangan fifa dibuat dengan standar keahlian tertinggi:<br><br>' +
+                          '&bull; <strong>Sapphire Crystal</strong>: Kaca safir berkekuatan 9 skala Mohs yang anti-gores permanen.<br>' +
+                          '&bull; <strong>316L Surgical Steel</strong>: Casing baja tahan karat medis yang anti-korosi dan berkilau mewah.<br>' +
+                          '&bull; <strong>Italian Leather</strong>: Tali kulit sapi asli Italia yang lembut dan nyaman.',
                     links: [
-                        { label: 'Keberlanjutan fifa', url: '{{ route('pages.show', 'sustainability') }}' }
+                        { label: 'Keahlian & Material', url: '{{ route('pages.show', 'sustainability') }}' }
                     ]
                 };
             }
 
-            // 4. Pengiriman / Ongkir / Estimasi
-            if (q.includes('ongkir') || q.includes('kirim') || q.includes('pengiriman') || q.includes('gratis') || q.includes('ekspedisi') || q.includes('resi')) {
+            // 4. Mesin Automatic
+            if (q.includes('automatic') || q.includes('otomatis') || q.includes('mesin') || q.includes('baterai') || q.includes('mekanik')) {
+                return {
+                    sender: 'bot',
+                    text: '<strong>Informasi Mesin Automatic fifa:</strong><br><br>' +
+                          '&bull; Bekerja murni dengan gerakan pergelangan tangan (tanpa perlu baterai).<br>' +
+                          '&bull; Memiliki cadangan daya (<em>power reserve</em>) hingga 42 jam.<br>' +
+                          '&bull; Dilengkapi <em>exhibition caseback</em> transparan di bagian belakang untuk melihat roda keseimbangan berdetak.',
+                    links: [
+                        { label: 'Koleksi Automatic', url: '{{ route('collections.show', 'heritage-automatic') }}' }
+                    ]
+                };
+            }
+
+            // 5. Pengiriman / Ongkir / Estimasi
+            if (q.includes('ongkir') || q.includes('kirim') || q.includes('pengiriman') || q.includes('gratis') || q.includes('ekspedisi') || q.includes('resi') || q.includes('asuransi')) {
                 return {
                     sender: 'bot',
                     text: '<strong>Informasi Pengiriman fifa:</strong><br><br>' +
-                          '&bull; <strong>Gratis Ongkir</strong> untuk setiap pesanan minimal <strong>Rp 500.000</strong> ke seluruh Indonesia.<br>' +
-                          '&bull; Estimasi pengiriman pulau Jawa: 1-3 hari kerja.<br>' +
-                          '&bull; Luar pulau Jawa: 3-5 hari kerja.<br>' +
-                          '&bull; Resi otomatis tercatat di akun setelah paket diproses.',
+                          '&bull; <strong>Gratis Ongkir & Asuransi Penuh</strong> untuk setiap pesanan minimal <strong>Rp 500.000</strong> ke seluruh Indonesia.<br>' +
+                          '&bull; Dikemas dalam kotak mewah berkunci dengan segel keamanan anti-bongkar.<br>' +
+                          '&bull; Estimasi pengiriman pulau Jawa: 1-3 hari kerja, luar Jawa: 3-5 hari kerja.',
                     links: [
                         { label: 'Keranjang Belanja', url: '{{ route('cart.index') }}' },
                         { label: 'Status Pesanan', url: '{{ auth()->check() ? route('account.orders.index') : route('login') }}' }
@@ -297,61 +311,47 @@ function fifaChatbot() {
                 };
             }
 
-            // 5. Garansi / Retur / Pengembalian 30 Hari
-            if (q.includes('garansi') || q.includes('retur') || q.includes('kembali') || q.includes('tukar') || q.includes('30 hari') || q.includes('uji coba')) {
+            // 6. Garansi Resmi 2 Tahun
+            if (q.includes('garansi') || q.includes('retur') || q.includes('kembali') || q.includes('tukar') || q.includes('servis') || q.includes('rusak')) {
                 return {
                     sender: 'bot',
-                    text: '<strong>Garansi Uji Coba 30 Hari:</strong><br><br>' +
-                          'Nikmati garansi uji coba selama <strong>30 hari</strong>. Jika ukuran tidak sesuai atau kurang nyaman, Anda dapat mengajukan penukaran atau pengembalian dengan mudah.',
+                    text: '<strong>Garansi Resmi Internasional 2 Tahun:</strong><br><br>' +
+                          'Setiap jam tangan fifa dilindungi kartu garansi resmi selama <strong>2 tahun</strong> untuk akurasi mesin dan cacat produksi. Anda juga berhak atas garansi kepuasan penukaran 30 hari.',
                     links: [
-                        { label: 'Kebijakan Garansi & Retur', url: '{{ route('pages.show', 'faq') }}' }
+                        { label: 'Pusat Bantuan & FAQ', url: '{{ route('pages.show', 'faq') }}' }
                     ]
                 };
             }
 
-            // 6. Koleksi Pria
+            // 7. Koleksi Pria
             if (q.includes('pria') || q.includes('men') || q.includes('cowok')) {
                 return {
                     sender: 'bot',
-                    text: 'Koleksi sepatu pria fifa mencakup sepatu lari (Tree Dasher), kasual wol (Wool Runner), serta model slip-on santai (Tree Lounger).',
+                    text: 'Koleksi jam tangan pria fifa menghadirkan seri Chrono Master, Heritage Automatic, Pro Diver 300M, dan Classic Dress Watch.',
                     links: [
-                        { label: 'Sepatu Pria', url: '{{ route('categories.men') }}' }
+                        { label: 'Jam Tangan Pria', url: '{{ route('categories.men') }}' }
                     ]
                 };
             }
 
-            // 7. Koleksi Wanita
+            // 8. Koleksi Wanita
             if (q.includes('wanita') || q.includes('women') || q.includes('cewek')) {
                 return {
                     sender: 'bot',
-                    text: 'Koleksi sepatu wanita fifa dirancang ringan dan fleksibel dengan palet warna alami elegan: sepatu lari, sneakers wol, dan flat slip-on.',
+                    text: 'Koleksi jam tangan wanita fifa dirancang elegan dengan sentuhan 18K rose gold, dial mother-of-pearl alami, rantai Milanese mesh, dan tali kulit pastel.',
                     links: [
-                        { label: 'Sepatu Wanita', url: '{{ route('categories.women') }}' }
+                        { label: 'Jam Tangan Wanita', url: '{{ route('categories.women') }}' }
                     ]
                 };
             }
 
-            // 8. Lokasi Toko
-            if (q.includes('toko') || q.includes('outlet') || q.includes('store') || q.includes('lokasi') || q.includes('offline')) {
+            // 9. Lokasi Butik / Toko
+            if (q.includes('toko') || q.includes('outlet') || q.includes('butik') || q.includes('store') || q.includes('lokasi') || q.includes('offline')) {
                 return {
                     sender: 'bot',
-                    text: 'Kunjungi toko resmi fifa untuk mencoba langsung sepatu berbahan alami kami.',
+                    text: 'Kunjungi butik resmi fifa di Senayan City, Grand Indonesia, Paris Van Java Bandung, Tunjungan Plaza Surabaya, dan Beachwalk Bali untuk mencoba langsung koleksi jam tangan kami.',
                     links: [
-                        { label: 'Lokasi Toko fifa', url: '{{ route('stores.index') }}' }
-                    ]
-                };
-            }
-
-            // 9. Perawatan Sepatu
-            if (q.includes('cuci') || q.includes('rawat') || q.includes('bersih') || q.includes('laundry')) {
-                return {
-                    sender: 'bot',
-                    text: '<strong>Panduan Perawatan Sepatu:</strong><br><br>' +
-                          '&bull; Lepaskan tali dan insole sebelum mencuci.<br>' +
-                          '&bull; Dapat dicuci mesin (siklus lembut air dingin).<br>' +
-                          '&bull; Cukup angin-anginkan di tempat teduh (hindari pengering panas).',
-                    links: [
-                        { label: 'FAQ Perawatan', url: '{{ route('pages.show', 'faq') }}' }
+                        { label: 'Lokasi Butik fifa', url: '{{ route('stores.index') }}' }
                     ]
                 };
             }
@@ -359,10 +359,10 @@ function fifaChatbot() {
             // Fallback default
             return {
                 sender: 'bot',
-                text: 'Saya dapat membantu Anda seputar rekomendasi sepatu, panduan ukuran, bahan alami, info gratis ongkir, atau garansi 30 hari fifa. Silakan pilih topik di bawah atau ketik pertanyaan Anda.',
+                text: 'Saya dapat membantu Anda seputar rekomendasi jam tangan fifa, panduan diameter dial, mesin automatic, kaca safir, pengiriman gratis, atau klaim garansi 2 tahun. Silakan pilih topik di bawah atau ketik pertanyaan Anda.',
                 links: [
-                    { label: 'Sepatu Pria', url: '{{ route('categories.men') }}' },
-                    { label: 'Sepatu Wanita', url: '{{ route('categories.women') }}' },
+                    { label: 'Jam Tangan Pria', url: '{{ route('categories.men') }}' },
+                    { label: 'Jam Tangan Wanita', url: '{{ route('categories.women') }}' },
                     { label: 'FAQ', url: '{{ route('pages.show', 'faq') }}' }
                 ]
             };

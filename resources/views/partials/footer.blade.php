@@ -145,10 +145,10 @@
                         </svg>
                     </button>
                     <div :class="openAccordion.shop ? 'block' : 'hidden md:block'" class="space-y-2 pt-2 md:pt-0">
-                        <a href="{{ route('categories.men') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Sepatu Pria</a>
-                        <a href="{{ route('categories.women') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Sepatu Wanita</a>
-                        <a href="{{ route('collections.show', 'men-tees-tops') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Pakaian Pria</a>
-                        <a href="{{ route('collections.show', 'women-tees-tops') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Pakaian Wanita</a>
+                        <a href="{{ route('categories.men') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Jam Tangan Pria</a>
+                        <a href="{{ route('categories.women') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Jam Tangan Wanita</a>
+                        <a href="{{ route('collections.show', 'chrono-master') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Seri Chrono Master</a>
+                        <a href="{{ route('collections.show', 'heritage-automatic') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Seri Heritage Automatic</a>
                     </div>
                 </div>
 
@@ -167,18 +167,15 @@
                             <!-- Left Sub-column -->
                             <div class="space-y-2">
                                 <a href="{{ route('pages.show', 'our-story') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Kisah Kami</a>
-                                <a href="{{ route('pages.show', 'sustainability') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Material Alami</a>
-                                <a href="{{ route('pages.show', 'materials-and-making') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Bahan & Pembuatan</a>
-                                <a href="{{ route('pages.show', 'shoe-care') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Perawatan Sepatu</a>
-                                <a href="{{ route('pages.show', 'press') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Pers & Media</a>
-                                <a href="{{ route('pages.show', 'responsible-disclosure') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5 leading-snug">Program Keterbukaan fifa</a>
-                                <a href="{{ route('pages.show', 'california-transparency') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Transparansi Rantai Pasok</a>
-                                <a href="{{ route('pages.show', 'community-offers') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Penawaran Komunitas</a>
+                                <a href="{{ route('pages.show', 'sustainability') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Keahlian & Material</a>
+                                <a href="{{ route('pages.show', 'size-guide') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Panduan Ukuran Dial</a>
+                                <a href="{{ route('pages.show', 'shoe-care') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Perawatan Jam Tangan</a>
+                                <a href="{{ route('stores.index') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Butik & Galeri</a>
                             </div>
                             <!-- Right Sub-column -->
                             <div class="space-y-2 pt-2 sm:pt-0">
-                                <a href="{{ route('blog.index') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Blog & Jurnal</a>
-                                <a href="{{ route('pages.show', 'patents') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Paten & Inovasi</a>
+                                <a href="{{ route('blog.index') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Jurnal Horologi</a>
+                                <a href="{{ route('pages.show', 'contact') }}" class="block text-[12px] sm:text-[13px] text-[#cccccc] hover:text-white transition py-0.5">Layanan Purna Jual</a>
                             </div>
                         </div>
                     </div>

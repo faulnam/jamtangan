@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'fifa Journal — Kisah Material Alami & Keberlanjutan')
+@section('title', 'fifa Journal — Seni Horologi & Kisah Jam Tangan')
 
 @section('content')
 <!-- Header Hero -->
@@ -8,10 +8,10 @@
     <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
         <span class="text-caption font-bold uppercase tracking-wide10 text-stone block mb-2">Cerita & Jurnal Kami</span>
         <h1 class="font-display font-normal text-3xl sm:text-4xl lg:text-5xl text-charcoal tracking-tight">
-            The fifa Journal
+            The fifa Horology Journal
         </h1>
         <p class="text-body text-iron max-w-xl mx-auto mt-4 leading-relaxed">
-            Inspirasi desain sepatu, inovasi material wol dan pohon terbarukan, serta komitmen kami untuk jejak karbon nol.
+            Inspirasi seni horologi, keunggulan mesin mekanik presisi, kristal safir anti-gores, dan panduan merawat jam tangan mewah Anda.
         </p>
     </div>
 </div>

@@ -173,7 +173,7 @@
 
         <!-- Category label -->
         <span class="text-caption text-iron line-clamp-1">
-            {{ $product->category->name ?? 'Sepatu fifa' }}
+            {{ $product->category->name ?? 'Jam Tangan fifa' }}
         </span>
 
         <!-- Price -->

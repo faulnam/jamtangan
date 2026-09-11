@@ -51,12 +51,12 @@
 
             <div>
                 <label for="slug" class="block text-caption font-bold uppercase tracking-wide10 text-charcoal mb-2">Slug (Opsional)</label>
-                <input type="text" id="slug" name="slug" value="{{ old('slug') }}" class="input-inset w-full" placeholder="mens-tree-runner-go">
+                <input type="text" id="slug" name="slug" value="{{ old('slug') }}" class="input-inset w-full" placeholder="mens-fifa-chrono-master">
             </div>
 
             <div>
                 <label for="short_description" class="block text-caption font-bold uppercase tracking-wide10 text-charcoal mb-2">Deskripsi Ringkas</label>
-                <input type="text" id="short_description" name="short_description" value="{{ old('short_description') }}" class="input-inset w-full" placeholder="Sepatu kasual harian dari serat eucalyptus...">
+                <input type="text" id="short_description" name="short_description" value="{{ old('short_description') }}" class="input-inset w-full" placeholder="Jam tangan chronograph presisi tinggi dengan kaca safir anti-gores...">
             </div>
 
             <div>

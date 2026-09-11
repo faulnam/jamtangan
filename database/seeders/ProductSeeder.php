@@ -17,65 +17,60 @@ class ProductSeeder extends Seeder
     public function run(): void
     {
         // 1. Fetch Categories
-        $menSneakers = Category::where('slug', 'men-everyday-sneakers')->first();
-        $menRunning = Category::where('slug', 'men-running-shoes')->first();
-        $menLoungers = Category::where('slug', 'men-slip-ons-loungers')->first();
-        $menMizzles = Category::where('slug', 'men-water-repellent-shoes')->first();
-        $menHiking = Category::where('slug', 'men-hiking-trail-shoes')->first();
-        $menTees = Category::where('slug', 'men-tees-tops')->first();
-        $menHoodies = Category::where('slug', 'men-sweats-hoodies')->first();
-        $menSocks = Category::where('slug', 'men-socks')->first();
-        $bags = Category::where('slug', 'bags-accessories')->first();
+        $menChrono = Category::where('slug', 'men-chronograph-watches')->first();
+        $menAutomatic = Category::where('slug', 'men-automatic-watches')->first();
+        $menDress = Category::where('slug', 'men-dress-watches')->first();
+        $menDiver = Category::where('slug', 'men-diver-watches')->first();
+        $menSmart = Category::where('slug', 'men-smart-watches')->first();
+        $menStraps = Category::where('slug', 'men-leather-straps')->first();
 
-        $womenSneakers = Category::where('slug', 'women-everyday-sneakers')->first();
-        $womenRunning = Category::where('slug', 'women-running-shoes')->first();
-        $womenFlats = Category::where('slug', 'women-flats-loungers')->first();
-        $womenSlipOns = Category::where('slug', 'women-slip-ons')->first();
-        $womenMizzles = Category::where('slug', 'women-water-repellent-shoes')->first();
-        $womenTees = Category::where('slug', 'women-tees-tops')->first();
-        $womenSocks = Category::where('slug', 'women-socks')->first();
+        $womenPetite = Category::where('slug', 'women-classic-petite')->first();
+        $womenRosegold = Category::where('slug', 'women-luxury-rosegold')->first();
+        $womenMesh = Category::where('slug', 'women-minimalist-mesh')->first();
+        $womenLeather = Category::where('slug', 'women-leather-elegance')->first();
+        $womenDiamond = Category::where('slug', 'women-diamond-accent')->first();
 
         // 2. Fetch Collections
         $newArrivalsCol = Collection::where('slug', 'new-arrivals')->first();
         $bestSellersCol = Collection::where('slug', 'best-sellers')->first();
         $saleCol = Collection::where('slug', 'sale')->first();
-        $treeCol = Collection::where('slug', 'tree-runners')->first();
-        $woolCol = Collection::where('slug', 'wool-runners')->first();
+        $chronoCol = Collection::where('slug', 'chrono-master')->first();
+        $heritageCol = Collection::where('slug', 'heritage-automatic')->first();
 
         // 3. Products Master Dataset
         $productsData = [
             // ----------------------------------------------------
-            // MEN SHOES
+            // MEN WATCHES
             // ----------------------------------------------------
             [
-                'category_id' => $menSneakers?->id ?? 1,
-                'name' => "Sepatu Pria Tree Runner Go",
-                'slug' => 'mens-tree-runner-go',
-                'short_description' => 'Sepatu harian ringan dan sejuk berbahan serat pohon eucalyptus bersertifikasi FSC®.',
-                'description' => '<p>Dirancang untuk jalan santai harian, bepergian, dan aktivitas non-stop. Sepatu Pria Tree Runner Go dilengkapi upper serat pohon eucalyptus yang bernapas, midsole SweetFoam® dari tebu alami yang empuk, serta insole berbahan minyak biji jarak yang super lembut.</p><p>Sangat fleksibel, dapat dicuci dengan mesin cuci, dan dibuat dari 100% material alami terbarukan untuk kenyamanan optimal sepanjang hari.</p>',
-                'material_info' => 'Upper: Serat TENCEL™ Lyocell bersertifikasi FSC (pohon eucalyptus). Midsole: SweetFoam® berbahan tebu alami Brasil. Insole: Campuran minyak biji jarak dengan lapisan wol merino ZQ.',
-                'sustainability_note' => 'Jejak karbon: 4.87 kg CO2e. 100% netral karbon melalui inisiatif iklim terverifikasi.',
-                'base_price' => 1750000,
-                'compare_at_price' => 1950000,
+                'category_id' => $menChrono?->id ?? 1,
+                'name' => "Jam Tangan Pria FIFA Chrono Master",
+                'slug' => 'mens-fifa-chrono-master',
+                'short_description' => 'Kronograf presisi tinggi dengan dial sunray biru megah, casing 316L stainless steel, dan kaca safir anti-gores.',
+                'description' => '<p>Dirancang untuk pria berkarakter dinamis dan berkelas. FIFA Chrono Master memadukan dial sunburst biru laut dengan 3 sub-dial presisi hingga 1/10 detik. Dilengkapi bezel tachymeter terukir laser dan rantai solid link 316L stainless steel dengan double lock deployment clasp.</p><p>Kaca safir anti-gores berpelapis anti-pantulan menjamin keterbacaan sempurna di bawah sinar matahari langsung. Tahan air hingga 100 meter (10 ATM).</p>',
+                'material_info' => 'Case: 316L Surgical Stainless Steel. Kaca: Double-domed Sapphire Crystal dengan Anti-Reflective Coating. Movement: Precision Quartz Chronograph Calibre. Water Resistance: 10 ATM (100m).',
+                'sustainability_note' => 'Garansi Resmi Internasional 2 Tahun. Bahan ramah lingkungan dan 100% dapat didaur ulang seumur hidup.',
+                'base_price' => 2450000,
+                'compare_at_price' => 2850000,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 600,
-                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id, $treeCol?->id]),
+                'weight_grams' => 165,
+                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id, $chronoCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Mist Blue (Blizzard Sole)',
-                        'color_hex' => '#5c778a',
-                        'sizes' => ['39' => 8, '40' => 15, '41' => 12, '42' => 20, '43' => 6, '44' => 4],
+                        'color_name' => 'Royal Sunray Blue (Steel Bracelet)',
+                        'color_hex' => '#25548a',
+                        'sizes' => ['40mm' => 12, '42mm' => 25, '44mm' => 10],
                     ],
                     [
-                        'color_name' => 'Natural White (Blizzard Sole)',
-                        'color_hex' => '#ffffff',
-                        'sizes' => ['39' => 5, '40' => 10, '41' => 14, '42' => 18, '43' => 8, '44' => 3],
+                        'color_name' => 'Pure Blizzard Silver (Steel Bracelet)',
+                        'color_hex' => '#dedede',
+                        'sizes' => ['40mm' => 8, '42mm' => 18, '44mm' => 6],
                     ],
                     [
-                        'color_name' => 'Forest Green',
-                        'color_hex' => '#4e6e58',
-                        'sizes' => ['40' => 6, '41' => 8, '42' => 12, '43' => 4],
+                        'color_name' => 'Emerald Green Edition',
+                        'color_hex' => '#1d5438',
+                        'sizes' => ['42mm' => 15, '44mm' => 8],
                     ],
                 ],
                 'images' => [
@@ -85,97 +80,91 @@ class ProductSeeder extends Seeder
                 ],
             ],
             [
-                'category_id' => $menRunning?->id ?? 1,
-                'name' => "Sepatu Lari Pria Tree Dasher 2",
-                'slug' => 'mens-tree-dasher-2',
-                'short_description' => 'Sepatu lari performa aktif dengan bantalan alami responsif dan daya cengkeram optimal.',
-                'description' => '<p>Tree Dasher 2 adalah sepatu lari dan latihan harian kami yang terbuat dari bahan alami. Dilengkapi kerah tumit yang diperbarui untuk penopang ekstra, bantalan sol karet alam anti-selip, serta SweetFoam® dengan pengembalian energi tinggi.</p>',
-                'material_info' => 'Upper satu rajutan tanpa sambungan dari serat eucalyptus bersertifikasi FSC. Midsole SweetFoam® dari tebu alami. Bantalan outsole karet alam bersertifikasi FSC.',
-                'sustainability_note' => 'Jejak karbon: 7.21 kg CO2e. Sepenuhnya netral karbon melalui program iklim tersertifikasi.',
-                'base_price' => 2150000,
+                'category_id' => $menAutomatic?->id ?? 1,
+                'name' => "Jam Tangan Pria FIFA Heritage Automatic",
+                'slug' => 'mens-fifa-heritage-automatic',
+                'short_description' => 'Kemewahan jam mekanikal otomatis tanpa baterai dengan dial arang sunburst dan rantai Milanese mesh halus.',
+                'description' => '<p>Perwujudan horologi klasik murni. FIFA Heritage Automatic ditenagai oleh gerakan mekanik otomatis dengan cadangan daya 42 jam yang terisi sendiri dari ayunan tangan Anda. Casing belakang transparan (exhibition caseback) memungkinkan Anda mengagumi gerakan roda keseimbangan dan rotor berukir.</p>',
+                'material_info' => 'Case: 316L Stainless Steel 40mm. Movement: Automatic Self-Winding 24 Jewels, 21.600 bph. Kaca: Scratch-resistant Sapphire Crystal. Strap: Milanese Mesh Stainless Steel. Water Resistance: 5 ATM (50m).',
+                'sustainability_note' => 'Bekerja 100% tanpa baterai. Dirancang tahan puluhan tahun dan dapat diwariskan ke generasi berikutnya.',
+                'base_price' => 3250000,
                 'compare_at_price' => null,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 700,
-                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id]),
+                'weight_grams' => 140,
+                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id, $heritageCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Sage Haze',
-                        'color_hex' => '#7d8d7e',
-                        'sizes' => ['39' => 6, '40' => 14, '41' => 10, '42' => 16, '43' => 8, '44' => 5],
+                        'color_name' => 'Charcoal Sunburst (Mesh Bracelet)',
+                        'color_hex' => '#4d4b4a',
+                        'sizes' => ['38mm' => 10, '40mm' => 20, '42mm' => 8],
                     ],
                     [
-                        'color_name' => 'Thunder Navy',
-                        'color_hex' => '#2b3a4a',
-                        'sizes' => ['40' => 8, '41' => 12, '42' => 15, '43' => 7, '44' => 2],
-                    ],
-                    [
-                        'color_name' => 'Mineral Crimson',
-                        'color_hex' => '#9e4747',
-                        'sizes' => ['40' => 4, '41' => 6, '42' => 9, '43' => 3],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/tree-dasher-sage.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/tree-dasher-navy.png', 'order' => 2, 'is_primary' => false],
-                    ['url' => '/images/products/tree-dasher-red.png', 'order' => 3, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $menSneakers?->id ?? 1,
-                'name' => "Sepatu Pria Wool Runner 2",
-                'slug' => 'mens-wool-runner-2',
-                'short_description' => 'Ikon klasik terlahir kembali: lebih lembut, membal, dan dibuat dari wol merino ZQ alami.',
-                'description' => '<p>Sneaker wol revolusioner yang mengawali segalanya, kini disempurnakan dengan lebih dari 15 peningkatan. Upper wol merino yang nyaman mengatur suhu kaki secara alami dan tahan bau tanpa zat kimia sintetis.</p>',
-                'material_info' => 'Upper wol merino Selandia Baru bersertifikasi ZQ. Sol SweetFoam® berbasis tebu. Tali sepatu dari poliester botol daur ulang.',
-                'sustainability_note' => 'Jejak karbon: 5.42 kg CO2e. 100% material alami terbarukan.',
-                'base_price' => 1850000,
-                'compare_at_price' => 2100000,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 650,
-                'collections' => array_filter([$bestSellersCol?->id, $woolCol?->id, $saleCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Natural Grey (Cream Sole)',
-                        'color_hex' => '#888582',
-                        'sizes' => ['39' => 4, '40' => 12, '41' => 18, '42' => 22, '43' => 10, '44' => 6],
-                    ],
-                    [
-                        'color_name' => 'Natural Black (Dark Sole)',
-                        'color_hex' => '#222222',
-                        'sizes' => ['39' => 7, '40' => 15, '41' => 20, '42' => 25, '43' => 12, '44' => 8],
+                        'color_name' => 'Champagne Heritage Gold',
+                        'color_hex' => '#c2a868',
+                        'sizes' => ['38mm' => 6, '40mm' => 15, '42mm' => 5],
                     ],
                 ],
                 'images' => [
                     ['url' => '/images/products/wool-runner-grey.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/wool-runner-black.png', 'order' => 2, 'is_primary' => false],
+                    ['url' => '/images/products/runner-nz-oat.png', 'order' => 2, 'is_primary' => false],
                 ],
             ],
             [
-                'category_id' => $menLoungers?->id ?? 1,
-                'name' => "Sepatu Pria Canvas Cruiser Slip On",
-                'slug' => 'mens-canvas-cruiser-slip-on',
-                'short_description' => 'Slip-on klasik yang mudah dipakai dari kanvas katun organik kuat dan tahan lama.',
-                'description' => '<p>Sepatu slip-on harian yang sangat fleksibel. Mudah dilepas dan dipakai, dilengkapi bantalan penyangga lengkung kaki serta kanvas sejuk yang semakin lembut setiap kali dipakai.</p>',
-                'material_info' => 'Upper 100% kanvas katun organik, sol luar karet alam, insole EVA daur ulang.',
-                'sustainability_note' => 'Jejak karbon: 4.10 kg CO2e.',
-                'base_price' => 1450000,
+                'category_id' => $menDiver?->id ?? 1,
+                'name' => "Jam Tangan Pria FIFA Pro Diver 300M",
+                'slug' => 'mens-fifa-pro-diver-300m',
+                'short_description' => 'Jam selam profesional dengan ketahanan air 30 ATM (300 meter), bezel keramik putar searah, dan jarum luminous Super-LumiNova.',
+                'description' => '<p>Diciptakan untuk menaklukkan kedalaman samudera. FIFA Pro Diver 300M menghadirkan dial hijau zamrud berpendar kuat di kegelapan laut berkat pigmen Swiss Super-LumiNova BGW9. Dilengkapi crown pengunci ulir (screw-down crown) dan katup pelepas helium otomatis.</p>',
+                'material_info' => 'Bezel: Scratch-proof High-Gloss Ceramic. Case: 316L Stainless Steel 42mm. Kaca: Sapphire Crystal tebal 3.5mm. Water Resistance: 30 ATM (300m / 1000ft).',
+                'sustainability_note' => 'Uji tekanan hidrostatik laboratorium berstandar ISO 6425 untuk jam selam profesional.',
+                'base_price' => 3850000,
+                'compare_at_price' => 4300000,
+                'is_active' => true,
+                'is_featured' => true,
+                'weight_grams' => 180,
+                'collections' => array_filter([$bestSellersCol?->id, $saleCol?->id]),
+                'variants' => [
+                    [
+                        'color_name' => 'Emerald Green Ceramic',
+                        'color_hex' => '#1b4d32',
+                        'sizes' => ['40mm' => 8, '42mm' => 22, '44mm' => 12],
+                    ],
+                    [
+                        'color_name' => 'Deep Sea Navy',
+                        'color_hex' => '#1e385c',
+                        'sizes' => ['40mm' => 10, '42mm' => 20, '44mm' => 14],
+                    ],
+                ],
+                'images' => [
+                    ['url' => '/images/products/tree-runner-forest.png', 'order' => 1, 'is_primary' => true],
+                    ['url' => '/images/products/tree-dasher-navy.png', 'order' => 2, 'is_primary' => false],
+                ],
+            ],
+            [
+                'category_id' => $menDress?->id ?? 1,
+                'name' => "Jam Tangan Pria FIFA Classic Dress White",
+                'slug' => 'mens-fifa-classic-dress-white',
+                'short_description' => 'Desain gaun klasik minimalis berbalut dial putih porselen bersih dan strap kulit asli Italia.',
+                'description' => '<p>Pilihan sempurna untuk setelan jas formal, pertemuan bisnis, dan momen istimewa. Menampilkan profil ramping setebal 7.5mm yang dengan mudah meluncur ke bawah manset kemeja Anda.</p>',
+                'material_info' => 'Dial: Enamel Finish White. Strap: Italian Genuine Calfskin Leather. Kaca: Kaca Safir Anti-Gores. Tebal: 7.5mm Ultra-Slim.',
+                'sustainability_note' => 'Kulit asli bersertifikasi Leather Working Group (LWG) penyamakan ramah lingkungan.',
+                'base_price' => 1890000,
                 'compare_at_price' => null,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 580,
+                'weight_grams' => 85,
                 'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Warm White',
+                        'color_name' => 'Enamel White (Brown Leather)',
                         'color_hex' => '#ded7cd',
-                        'sizes' => ['39' => 5, '40' => 10, '41' => 15, '42' => 14, '43' => 8, '44' => 4],
+                        'sizes' => ['38mm' => 10, '40mm' => 25, '42mm' => 12],
                     ],
                     [
-                        'color_name' => 'Blizzard White',
+                        'color_name' => 'Blizzard Silver (Black Leather)',
                         'color_hex' => '#ffffff',
-                        'sizes' => ['39' => 6, '40' => 11, '41' => 16, '42' => 19, '43' => 7, '44' => 3],
+                        'sizes' => ['38mm' => 8, '40mm' => 20, '42mm' => 10],
                     ],
                 ],
                 'images' => [
@@ -184,101 +173,89 @@ class ProductSeeder extends Seeder
                 ],
             ],
             [
-                'category_id' => $menLoungers?->id ?? 1,
-                'name' => "Sepatu Pria Runner NZ Slip On",
-                'slug' => 'mens-runner-nz-slip-on',
-                'short_description' => 'Sneaker slip-on rajut bertekstur memadukan kenyamanan kaus kaki dengan bantalan harian.',
-                'description' => '<p>Langsung pakai dan melangkah. Runner NZ Slip On membalut kaki Anda dengan kerah rajut elastis yang pas dan sol tebu alami SweetFoam® untuk kenyamanan jalan tanpa tekanan.</p>',
-                'material_info' => 'Upper rajut ribbed berteknologi tinggi dari serat eucalyptus dan nilon daur ulang.',
-                'sustainability_note' => 'Jejak karbon: 4.60 kg CO2e.',
-                'base_price' => 1650000,
-                'compare_at_price' => 1850000,
+                'category_id' => $menChrono?->id ?? 1,
+                'name' => "Jam Tangan Pria FIFA Phantom Black Chrono",
+                'slug' => 'mens-fifa-phantom-black-chrono',
+                'short_description' => 'Desain siluman monokrom full black DLC dengan strap silikon bertekstur nyaman untuk gaya kasual modern.',
+                'description' => '<p>Nuansa maskulin tegas dalam balutan warna serba hitam matte berteknologi pelapis Diamond-Like Carbon (DLC). Sangat tangguh terhadap goresan dan nyaman di pergelangan tangan sepanjang hari.</p>',
+                'material_info' => 'Case: Matte Black DLC Coated 316L Steel. Strap: High-Density Waterproof Silicone. Kaca: Sapphire Crystal with Dark AR Coating.',
+                'sustainability_note' => 'Tahan benturan dan cuaca ekstrem tropis.',
+                'base_price' => 2650000,
+                'compare_at_price' => 2950000,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 600,
-                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
+                'weight_grams' => 135,
+                'collections' => array_filter([$bestSellersCol?->id, $chronoCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Mushroom Taupe',
-                        'color_hex' => '#b2a496',
-                        'sizes' => ['39' => 4, '40' => 9, '41' => 12, '42' => 16, '43' => 6, '44' => 2],
+                        'color_name' => 'Phantom Matte Black',
+                        'color_hex' => '#212121',
+                        'sizes' => ['40mm' => 10, '42mm' => 24, '44mm' => 15],
                     ],
                     [
-                        'color_name' => 'Anthracite Charcoal',
-                        'color_hex' => '#444240',
-                        'sizes' => ['39' => 7, '40' => 14, '41' => 18, '42' => 20, '43' => 9, '44' => 5],
-                    ],
-                    [
-                        'color_name' => 'Oatmeal Natural',
-                        'color_hex' => '#ded4c5',
-                        'sizes' => ['40' => 5, '41' => 8, '42' => 11, '43' => 4],
+                        'color_name' => 'Anthracite Carbon',
+                        'color_hex' => '#3a3a3a',
+                        'sizes' => ['40mm' => 6, '42mm' => 16, '44mm' => 8],
                     ],
                 ],
                 'images' => [
-                    ['url' => '/images/products/runner-nz-mushroom.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/runner-nz-anthracite.png', 'order' => 2, 'is_primary' => false],
-                    ['url' => '/images/products/runner-nz-oat.png', 'order' => 3, 'is_primary' => false],
+                    ['url' => '/images/products/runner-nz-anthracite.png', 'order' => 1, 'is_primary' => true],
+                    ['url' => '/images/products/wool-runner-black.png', 'order' => 2, 'is_primary' => false],
                 ],
             ],
             [
-                'category_id' => $menMizzles?->id ?? 1,
-                'name' => "Sepatu Pria Wool Runner-up Mizzle",
-                'slug' => 'mens-wool-runner-up-mizzle',
-                'short_description' => 'Sneaker high-top tahan percikan air dari bahan wol merino ZQ pelindung genangan.',
-                'description' => '<p>Jaga kaki tetap kering dan hangat dalam kondisi cuaca apapun. Dilengkapi teknologi bio-based Puddle Guard® penangkal air dan sol tapak karet alam anti-selip di segala medan.</p>',
-                'material_info' => 'Upper wol merino ZQ dengan perlakuan ECO Puddle Guard®. Outsole karet alam bergerigi untuk segala cuaca.',
-                'sustainability_note' => 'Jejak karbon: 6.80 kg CO2e.',
-                'base_price' => 2350000,
+                'category_id' => $menChrono?->id ?? 1,
+                'name' => "Jam Tangan Pria FIFA Racing Crimson Chrono",
+                'slug' => 'mens-fifa-racing-crimson-chrono',
+                'short_description' => 'Edisi balap motorsport dengan dial merah crimson menyala dan fungsi stopwatch presisi tinggi.',
+                'description' => '<p>Terinspirasi dari sirkuit balap legendaris dunia. FIFA Racing Crimson memadukan dial merah cerah dengan sub-dial kontras dan jarum beraksen sporty.</p>',
+                'material_info' => 'Case: 316L Stainless Steel 42mm. Strap: Perforated Rally Leather Strap. Water Resistance: 10 ATM.',
+                'sustainability_note' => 'Garansi Resmi 2 Tahun Mesin & Baterai.',
+                'base_price' => 2550000,
                 'compare_at_price' => null,
                 'is_active' => true,
                 'is_featured' => false,
-                'weight_grams' => 750,
-                'collections' => array_filter([$woolCol?->id]),
+                'weight_grams' => 150,
+                'collections' => array_filter([$chronoCol?->id, $newArrivalsCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'True Black (Black Sole)',
-                        'color_hex' => '#1f1f1f',
-                        'sizes' => ['40' => 8, '41' => 14, '42' => 16, '43' => 7, '44' => 3],
-                    ],
-                    [
-                        'color_name' => 'Dappled Grey',
-                        'color_hex' => '#6b6967',
-                        'sizes' => ['40' => 5, '41' => 9, '42' => 12, '43' => 6],
+                        'color_name' => 'Crimson Racing Red',
+                        'color_hex' => '#9e2424',
+                        'sizes' => ['42mm' => 18, '44mm' => 10],
                     ],
                 ],
                 'images' => [
-                    ['url' => '/images/products/wool-runner-black.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/wool-runner-grey.png', 'order' => 2, 'is_primary' => false],
+                    ['url' => '/images/products/tree-dasher-red.png', 'order' => 1, 'is_primary' => true],
                 ],
             ],
 
             // ----------------------------------------------------
-            // WOMEN SHOES
+            // WOMEN WATCHES
             // ----------------------------------------------------
             [
-                'category_id' => $womenFlats?->id ?? 1,
-                'name' => "Sepatu Wanita Tree Lounger",
-                'slug' => 'womens-tree-lounger',
-                'short_description' => 'Sepatu slip-on serat eucalyptus yang sejuk, praktis tanpa kaus kaki, dan empuk.',
-                'description' => '<p>Sepatu flat slip-on kasual terbaik untuk bepergian dan santai akhir pekan. Serat pohon eucalyptus yang selembut sutra menjaga kaki tetap sejuk dan segar sepanjang hari.</p>',
-                'material_info' => 'Upper serat eucalyptus bersertifikasi FSC, sol tebu SweetFoam®, insole berlapisan wol merino lembut.',
-                'sustainability_note' => 'Jejak karbon: 3.90 kg CO2e.',
-                'base_price' => 1550000,
-                'compare_at_price' => 1750000,
+                'category_id' => $womenRosegold?->id ?? 1,
+                'name' => "Jam Tangan Wanita FIFA Petite Rose Gold",
+                'slug' => 'womens-fifa-petite-rosegold',
+                'short_description' => 'Kemewahan feminin abadi dengan balutan rose gold berkilau, dial mutiara alami, dan indeks kristal berkilau.',
+                'description' => '<p>Jam tangan wanita paling memukau dari fifa. Casing 32mm berlapis emas rose gold 18K PVD yang anggun dipadukan dengan dial Mother-of-Pearl alami yang membiaskan cahaya pelangi lembut di setiap sudut.</p><p>Rantai jubilee ramping melingkar lembut di pergelangan tangan Anda, cocok untuk busana kasual chic hingga gaun pesta mewah.</p>',
+                'material_info' => 'Case & Strap: 18K Rose Gold PVD on 316L Steel. Dial: Genuine Natural Mother of Pearl. Kaca: Scratch-proof Sapphire Crystal. Water Resistance: 5 ATM (50m).',
+                'sustainability_note' => 'Bahan hipoalergenik, 100% aman untuk kulit sensitif tanpa nikel.',
+                'base_price' => 2190000,
+                'compare_at_price' => 2490000,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 450,
-                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id, $treeCol?->id]),
+                'weight_grams' => 95,
+                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Dusty Mauve',
-                        'color_hex' => '#9d7370',
-                        'sizes' => ['36' => 6, '37' => 14, '38' => 18, '39' => 20, '40' => 12, '41' => 4],
+                        'color_name' => 'Rose Gold Pearl',
+                        'color_hex' => '#d49b8a',
+                        'sizes' => ['30mm' => 10, '32mm' => 25, '34mm' => 15],
                     ],
                     [
-                        'color_name' => 'Warm Terracotta',
-                        'color_hex' => '#b87358',
-                        'sizes' => ['36' => 4, '37' => 10, '38' => 15, '39' => 16, '40' => 8, '41' => 2],
+                        'color_name' => 'Blush Pink Pastel',
+                        'color_hex' => '#e8b2b0',
+                        'sizes' => ['30mm' => 8, '32mm' => 18, '34mm' => 10],
                     ],
                 ],
                 'images' => [
@@ -287,235 +264,112 @@ class ProductSeeder extends Seeder
                 ],
             ],
             [
-                'category_id' => $womenRunning?->id ?? 1,
-                'name' => "Sepatu Lari Wanita Tree Dasher 2",
-                'slug' => 'womens-tree-dasher-2',
-                'short_description' => 'Sepatu lari performa tinggi dirancang dengan serat alami bernapas yang sejuk.',
-                'description' => '<p>Dibuat untuk lari pagi, olahraga 5K, dan rutinitas aktif di perkotaan. Dilengkapi upper anatomis tanpa jahitan, bantalan tumit empuk, dan midsole SweetFoam® alami untuk daya pantul maksimal.</p>',
-                'material_info' => 'Upper rajut serat pohon eucalyptus, midsole SweetFoam® berbahan tebu, outsole karet alam FSC.',
-                'sustainability_note' => 'Jejak karbon: 6.90 kg CO2e.',
-                'base_price' => 2150000,
+                'category_id' => $womenLeather?->id ?? 1,
+                'name' => "Jam Tangan Wanita FIFA Classic Leather Elegance",
+                'slug' => 'womens-fifa-classic-leather-elegance',
+                'short_description' => 'Sentuhan minimalis berkelas dengan strap kulit asli Italia warna nude champagne dan bezel rose gold.',
+                'description' => '<p>Keindahan dalam kesederhanaan. Dial krem champagne berpadu harmonis dengan tali kulit Italia yang lembut dan nyaman dipakai seharian di kantor maupun akhir pekan.</p>',
+                'material_info' => 'Case: Polished Rose Gold 34mm. Strap: Soft Italian Nappa Leather. Kaca: Sapphire Crystal. Movement: Swiss Quartz.',
+                'sustainability_note' => 'Desain ramah lingkungan dan baterai hemat energi bertahan hingga 3 tahun.',
+                'base_price' => 1790000,
                 'compare_at_price' => null,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 620,
-                'collections' => array_filter([$newArrivalsCol?->id, $bestSellersCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Sage Frost',
-                        'color_hex' => '#7d8d7e',
-                        'sizes' => ['36' => 5, '37' => 12, '38' => 20, '39' => 18, '40' => 10, '41' => 3],
-                    ],
-                    [
-                        'color_name' => 'Ocean Navy',
-                        'color_hex' => '#324a5e',
-                        'sizes' => ['36' => 4, '37' => 9, '38' => 14, '39' => 15, '40' => 7],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/tree-dasher-sage.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/tree-dasher-navy.png', 'order' => 2, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $womenSneakers?->id ?? 1,
-                'name' => "Sepatu Wanita Tree Runner Go",
-                'slug' => 'womens-tree-runner-go',
-                'short_description' => 'Sepatu jalan santai ringan harian dengan serat pohon eucalyptus yang sejuk bernapas.',
-                'description' => '<p>Sepatu andalan untuk segala aktivitas. Empuk, selembut awan, dapat dicuci dengan mesin, dan dibuat secara berkelanjutan untuk kenyamanan kerja hingga akhir pekan.</p>',
-                'material_info' => 'Serat eucalyptus FSC, midsole tebu alami SweetFoam®.',
-                'sustainability_note' => 'Jejak karbon: 4.40 kg CO2e.',
-                'base_price' => 1750000,
-                'compare_at_price' => 1950000,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 540,
-                'collections' => array_filter([$bestSellersCol?->id, $treeCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Sky Blue (White Sole)',
-                        'color_hex' => '#5c778a',
-                        'sizes' => ['36' => 8, '37' => 16, '38' => 22, '39' => 20, '40' => 14, '41' => 6],
-                    ],
-                    [
-                        'color_name' => 'Pure Blizzard White',
-                        'color_hex' => '#ffffff',
-                        'sizes' => ['36' => 6, '37' => 12, '38' => 19, '39' => 18, '40' => 10, '41' => 4],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/tree-runner-blue.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/tree-runner-white.png', 'order' => 2, 'is_primary' => false],
-                ],
-            ],
-            [
-                'category_id' => $womenSlipOns?->id ?? 1,
-                'name' => "Sepatu Wanita Canvas Cruiser Slip On",
-                'slug' => 'womens-canvas-cruiser-slip-on',
-                'short_description' => 'Slip-on kanvas katun organik bersih dan minimalis dengan bantalan penopang kaki.',
-                'description' => '<p>Siluet slip-on klasik yang tampil modern dengan 100% kanvas katun organik, nyaman dipakai langsung tanpa masa penyesuaian. Kasual, bersih, dan membal.</p>',
-                'material_info' => 'Upper 100% kanvas katun organik, insole SweetFoam®.',
-                'sustainability_note' => 'Jejak karbon: 3.85 kg CO2e.',
-                'base_price' => 1450000,
-                'compare_at_price' => null,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 520,
+                'weight_grams' => 65,
                 'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Warm White',
-                        'color_hex' => '#ded7cd',
-                        'sizes' => ['36' => 6, '37' => 14, '38' => 20, '39' => 18, '40' => 12, '41' => 5],
+                        'color_name' => 'Champagne Nude (Leather Strap)',
+                        'color_hex' => '#bfae9b',
+                        'sizes' => ['32mm' => 12, '34mm' => 20, '36mm' => 8],
                     ],
                 ],
                 'images' => [
-                    ['url' => '/images/products/canvas-cruiser-white.png', 'order' => 1, 'is_primary' => true],
+                    ['url' => '/images/products/runner-nz-mushroom.png', 'order' => 1, 'is_primary' => true],
                 ],
             ],
             [
-                'category_id' => $womenSlipOns?->id ?? 1,
-                'name' => "Sepatu Wanita Cruiser Slip On",
-                'slug' => 'womens-cruiser-slip-on',
-                'short_description' => 'Sneaker slip-on rajut tanpa jahitan untuk kemudahan pemakaian dan kenyamanan ringan.',
-                'description' => '<p>Siluet slip-on abadi dalam balutan warna putih Blizzard. Ringan, lentur, dan siap menemani langkah Anda ke mana pun hari membawa.</p>',
-                'material_info' => 'Upper rajut engineered dengan sol tebu SweetFoam®.',
-                'sustainability_note' => 'Jejak karbon: 4.15 kg CO2e.',
-                'base_price' => 1650000,
+                'category_id' => $womenMesh?->id ?? 1,
+                'name' => "Jam Tangan Wanita FIFA Minimalist Silver Mesh",
+                'slug' => 'womens-fifa-minimalist-silver-mesh',
+                'short_description' => 'Siluet modern dengan dial putih bersih, profil ultra-tipis 6.8mm, dan gelang rantai pasir perak berkilau.',
+                'description' => '<p>Jam tangan ultra-tipis berbobot ringan yang menyatu alami dengan pergelangan tangan wanita modern. Dilengkapi pengunci geser yang mudah diatur ukurannya sendiri tanpa alat pemotong rantai.</p>',
+                'material_info' => 'Case: 316L Stainless Steel 32mm. Strap: Adjustable Milanese Mesh. Kaca: Sapphire Glass. Water Resistance: 5 ATM.',
+                'sustainability_note' => 'Garansi 2 Tahun Resmi fifa Indonesia.',
+                'base_price' => 1850000,
                 'compare_at_price' => null,
                 'is_active' => true,
                 'is_featured' => true,
-                'weight_grams' => 530,
+                'weight_grams' => 80,
                 'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Blizzard White',
+                        'color_name' => 'Blizzard Silver Mesh',
                         'color_hex' => '#ffffff',
-                        'sizes' => ['36' => 5, '37' => 12, '38' => 18, '39' => 16, '40' => 9, '41' => 3],
+                        'sizes' => ['32mm' => 15, '34mm' => 20, '36mm' => 10],
                     ],
                 ],
                 'images' => [
                     ['url' => '/images/products/cruiser-slipon-blizzard.png', 'order' => 1, 'is_primary' => true],
                 ],
             ],
-            [
-                'category_id' => $womenSlipOns?->id ?? 1,
-                'name' => "Sepatu Wanita Runner NZ Slip On",
-                'slug' => 'womens-runner-nz-slip-on',
-                'short_description' => 'Sneaker slip-on rajut bergaris dengan peredam kejut benturan premium.',
-                'description' => '<p>Rasakan sensasi berjalan di atas awan dengan Runner NZ Slip On. Kerah rajut elastis yang fleksibel pas seperti kulit kedua sementara SweetFoam® meredam getaran langkah dengan mudah.</p>',
-                'material_info' => 'Upper rajut bergaris dari serat pohon eucalyptus FSC.',
-                'sustainability_note' => 'Jejak karbon: 4.50 kg CO2e.',
-                'base_price' => 1750000,
-                'compare_at_price' => null,
-                'is_active' => true,
-                'is_featured' => true,
-                'weight_grams' => 560,
-                'collections' => array_filter([$bestSellersCol?->id, $newArrivalsCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Mushroom Taupe',
-                        'color_hex' => '#b2a496',
-                        'sizes' => ['36' => 7, '37' => 15, '38' => 20, '39' => 18, '40' => 11, '41' => 4],
-                    ],
-                    [
-                        'color_name' => 'Anthracite Charcoal',
-                        'color_hex' => '#444240',
-                        'sizes' => ['36' => 6, '37' => 12, '38' => 17, '39' => 15, '40' => 10, '41' => 3],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/runner-nz-mushroom.png', 'order' => 1, 'is_primary' => true],
-                    ['url' => '/images/products/runner-nz-anthracite.png', 'order' => 2, 'is_primary' => false],
-                ],
-            ],
 
             // ----------------------------------------------------
-            // APPAREL & ACCESSORIES
+            // ACCESSORIES & STRAPS
             // ----------------------------------------------------
             [
-                'category_id' => $menTees?->id ?? 1,
-                'name' => "Kaos Pria Sea Tee Classic",
-                'slug' => 'mens-sea-tee-classic',
-                'short_description' => 'Kaos harian lembut dan sejuk dari perpaduan katun organik dan serat alami cangkang kepiting.',
-                'description' => '<p>Kenalkan kaos alami paling inovatif di dunia. Dipadukan dengan Kitosan (serat terbarukan dari cangkang kepiting) dan katun Pima Peru organik agar tetap segar lebih lama secara alami.</p>',
-                'material_info' => '65% Katun Pima Peru Organik, 35% SeaCell™ Lyocell dengan Kitosan.',
-                'sustainability_note' => 'Jejak karbon: 6.30 kg CO2e. 100% alami dan bebas mikroplastik.',
-                'base_price' => 650000,
-                'compare_at_price' => 750000,
-                'is_active' => true,
-                'is_featured' => false,
-                'weight_grams' => 250,
-                'collections' => array_filter([$newArrivalsCol?->id, $saleCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Natural White',
-                        'color_hex' => '#ffffff',
-                        'sizes' => ['S' => 10, 'M' => 20, 'L' => 25, 'XL' => 15],
-                    ],
-                    [
-                        'color_name' => 'Classic Charcoal',
-                        'color_hex' => '#2b2b2b',
-                        'sizes' => ['S' => 8, 'M' => 18, 'L' => 20, 'XL' => 12],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/wool-runner-black.png', 'order' => 1, 'is_primary' => true],
-                ],
-            ],
-            [
-                'category_id' => $menSocks?->id ?? 1,
-                'name' => "Kaos Kaki Trino™ Tubers Crew",
-                'slug' => 'trino-tubers-crew-socks',
-                'short_description' => 'Kaos kaki crew harian yang bernapas dari perpaduan serat pohon eucalyptus dan wol merino.',
-                'description' => '<p>Kaos kaki ternyaman di dunia. Dirancang dengan benang Trino™ eksklusif kami yang memadukan serat pohon eucalyptus sejuk dan wol merino ZQ lembut.</p>',
-                'material_info' => '50% TENCEL™ Lyocell, 35% Wol Merino ZQ, 12% Nilon Daur Ulang, 3% Spandex.',
-                'sustainability_note' => 'Jejak karbon: 1.20 kg CO2e.',
-                'base_price' => 250000,
-                'compare_at_price' => null,
-                'is_active' => true,
-                'is_featured' => false,
-                'weight_grams' => 100,
-                'collections' => array_filter([$bestSellersCol?->id]),
-                'variants' => [
-                    [
-                        'color_name' => 'Heather Grey',
-                        'color_hex' => '#888582',
-                        'sizes' => ['S/M' => 30, 'L/XL' => 40],
-                    ],
-                    [
-                        'color_name' => 'Natural Black',
-                        'color_hex' => '#212121',
-                        'sizes' => ['S/M' => 25, 'L/XL' => 35],
-                    ],
-                ],
-                'images' => [
-                    ['url' => '/images/products/wool-runner-grey.png', 'order' => 1, 'is_primary' => true],
-                ],
-            ],
-            [
-                'category_id' => $bags?->id ?? 1,
-                'name' => "Tas fifa Anytime Tote Bag",
-                'slug' => 'fifa-anytime-tote-bag',
-                'short_description' => 'Tote bag kanvas katun organik kokoh untuk belanja, pantai, dan perjalanan harian.',
-                'description' => '<p>Kapasitas lapang, tali bahu diperkuat, dan kantong internal untuk barang esensial Anda. Dibuat dari 100% kanvas katun organik tebal untuk menggantikan plastik sekali pakai selamanya.</p>',
-                'material_info' => '100% Kanvas Katun Organik Tebal (14oz).',
-                'sustainability_note' => 'Jejak karbon: 2.10 kg CO2e.',
+                'category_id' => $menStraps?->id ?? 1,
+                'name' => "FIFA Premium Leather Watch Strap 20mm/22mm",
+                'slug' => 'fifa-premium-leather-watch-strap',
+                'short_description' => 'Tali jam tangan kulit sapi asli Italia dengan mekanisme quick-release ganti tali instan tanpa alat.',
+                'description' => '<p>Ubah gaya jam tangan fifa Anda dalam hitungan detik. Tali kulit asli berkualitas tinggi yang semakin berkarakter seiring berjalannya waktu. Dilengkapi pin pegas pelepas cepat (quick-release spring bars).</p>',
+                'material_info' => '100% Genuine Italian Full-Grain Leather, Buckle 316L Steel.',
+                'sustainability_note' => 'Pewarnaan berbasis ekstrak nabati alami tanpa bahan kimia keras.',
                 'base_price' => 450000,
                 'compare_at_price' => 550000,
                 'is_active' => true,
                 'is_featured' => false,
-                'weight_grams' => 350,
-                'collections' => array_filter([$newArrivalsCol?->id]),
+                'weight_grams' => 40,
+                'collections' => array_filter([$newArrivalsCol?->id, $saleCol?->id]),
                 'variants' => [
                     [
-                        'color_name' => 'Natural Canvas',
-                        'color_hex' => '#e8e2d5',
-                        'sizes' => ['One Size' => 50],
+                        'color_name' => 'Chestnut Brown',
+                        'color_hex' => '#6e4529',
+                        'sizes' => ['20mm' => 30, '22mm' => 40],
+                    ],
+                    [
+                        'color_name' => 'Classic Black',
+                        'color_hex' => '#212121',
+                        'sizes' => ['20mm' => 25, '22mm' => 35],
                     ],
                 ],
                 'images' => [
                     ['url' => '/images/products/canvas-cruiser-white.png', 'order' => 1, 'is_primary' => true],
+                ],
+            ],
+            [
+                'category_id' => $menStraps?->id ?? 1,
+                'name' => "FIFA Luxury Automatic Watch Winder Box",
+                'slug' => 'fifa-luxury-automatic-watch-winder',
+                'short_description' => 'Kotak pemutar jam otomatis eksklusif dengan motor hening Jepang Mabuchi dan interior beludru lembut.',
+                'description' => '<p>Jaga jam tangan otomatis fifa Anda tetap berdetak akurat dan siap dipakai setiap saat. Dilengkapi motor ultra-silent berteknologi Jepang, pengatur putaran multi-arah, dan pencahayaan LED biru lembut yang elegan.</p>',
+                'material_info' => 'Solid Piano Lacquer Wood Box, Japanese Mabuchi Motor, Velvet Lining.',
+                'sustainability_note' => 'Hemat daya listrik dengan adaptor AC ganda dan kompartemen baterai darurat.',
+                'base_price' => 1450000,
+                'compare_at_price' => 1750000,
+                'is_active' => true,
+                'is_featured' => false,
+                'weight_grams' => 1200,
+                'collections' => array_filter([$bestSellersCol?->id]),
+                'variants' => [
+                    [
+                        'color_name' => 'Piano Gloss Black',
+                        'color_hex' => '#1a1a1a',
+                        'sizes' => ['Single Slot' => 20, 'Double Slot' => 15],
+                    ],
+                ],
+                'images' => [
+                    ['url' => '/images/products/wool-runner-black.png', 'order' => 1, 'is_primary' => true],
                 ],
             ],
         ];
@@ -560,7 +414,7 @@ class ProductSeeder extends Seeder
             $varIndex = 1;
             foreach ($data['variants'] as $varGroup) {
                 foreach ($varGroup['sizes'] as $size => $stock) {
-                    $sku = 'FIF-' . str_pad($product->id, 3, '0', STR_PAD_LEFT) . '-' . strtoupper(substr(Str::slug($varGroup['color_name']), 0, 4)) . '-' . $size . '-' . $varIndex;
+                    $sku = 'FIF-W-' . str_pad($product->id, 3, '0', STR_PAD_LEFT) . '-' . strtoupper(substr(Str::slug($varGroup['color_name']), 0, 4)) . '-' . Str::slug($size) . '-' . $varIndex;
                     ProductVariant::create([
                         'product_id' => $product->id,
                         'sku' => $sku,
@@ -575,28 +429,28 @@ class ProductSeeder extends Seeder
                 }
             }
 
-            // Seed Sample Verified Reviews for each product
+            // Seed Sample Verified Reviews for each watch
             $user = User::first();
             if ($user && $product->reviews()->count() === 0) {
                 Review::create([
                     'product_id' => $product->id,
                     'user_id' => $user->id,
                     'rating' => 5,
-                    'title' => 'Sepatu paling nyaman yang pernah saya pakai!',
-                    'comment' => 'Materialnya sangat sejuk di kaki dan solnya empuk luar biasa. Dipakai jalan seharian tidak membuat pegal sama sekali.',
+                    'title' => 'Jam tangan paling presisi dan mewah!',
+                    'comment' => 'Finishing casing stainless steel 316L sangat halus, kaca safirnya jernih tanpa silau. Dipakai di pergelangan tangan terasa berbobot mantap dan sangat elegan.',
                     'is_approved' => true,
                 ]);
                 Review::create([
                     'product_id' => $product->id,
                     'user_id' => $user->id,
                     'rating' => 5,
-                    'title' => 'Sangat berkualitas dan ramah lingkungan',
-                    'comment' => 'Desainnya clean, minimalis, dan sangat cocok dipadukan dengan celana apapun. Worth every penny!',
+                    'title' => 'Kualitas setara jam tangan Swiss belasan juta',
+                    'comment' => 'Desain dial rapi dan pergerakan jarumnya sangat mulus. Kemasan kotaknya pun sangat mewah dan berkelas. Sangat puas belanja di fifa!',
                     'is_approved' => true,
                 ]);
             }
         }
 
-        echo "ProductSeeder completed: " . count($productsData) . " rich products with transparent PNGs and variants seeded.\n";
+        echo "ProductSeeder completed: " . count($productsData) . " rich watch products with transparent PNGs and variants seeded.\n";
     }
 }

@@ -16,7 +16,7 @@ class CollectionController extends Controller
         $collection = null;
         $category = null;
         $pageTitle = 'Semua Produk';
-        $pageDescription = 'Koleksi sepatu dan pakaian berbahan alami berkelanjutan dari fifa.';
+        $pageDescription = 'Koleksi jam tangan mewah, presisi tinggi, dan kaca safir anti-gores dari fifa.';
 
         $query = Product::where('is_active', true)
             ->with(['category', 'images', 'variants' => fn ($q) => $q->where('is_active', true)]);
@@ -24,8 +24,8 @@ class CollectionController extends Controller
         // 1. Check if slug matches special gender route /men or /women
         if ($slug === 'men' || $slug === 'women') {
             $gender = $slug;
-            $pageTitle = ucfirst($gender) . "'s Collection";
-            $pageDescription = "Koleksi sepatu dan pakaian nyaman ramah lingkungan untuk " . ($gender === 'men' ? 'Pria' : 'Wanita') . ".";
+            $pageTitle = ucfirst($gender) . "'s Watch Collection";
+            $pageDescription = "Koleksi jam tangan mewah dan elegan fifa untuk " . ($gender === 'men' ? 'Pria' : 'Wanita') . ".";
             
             $categoryIds = Category::where('gender', $gender)->pluck('id');
             $query->whereIn('category_id', $categoryIds);
